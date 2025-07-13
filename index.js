@@ -24,4 +24,7 @@ app.post('/stitch', upload.fields([{ name: 'audio' }, { name: 'video' }]), (req,
   });
 });
 
-app.listen(3000, () => console.log('FFmpeg microservice running on port 3000'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`FFmpeg microservice running on port ${PORT}`);
+});
